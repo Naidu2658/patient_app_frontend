@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Accordion = (props) => {
+const ViewEhr= (props) => {
   const [isActive, setIsActive] = useState(false);
    //console.log(props.title)
    //console.log(props.content[0].episodeId)
@@ -60,4 +60,4 @@ const Accordion = (props) => {
   );
 };
 
-export default Accordion;
+export default ViewEhr;

@@ -1,7 +1,7 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 //import './hospitallist';
-import Accordion from './Accordion';
+import ViewEhr from './ViewEhr';
 export default function About(props) {
 
 
@@ -173,7 +173,7 @@ export default function About(props) {
         <div className="accordion">
           {resp.hospitalrecords.map(({hospitalName , dataCustodianId, episodes  }) => (
               
-            <Accordion title={hospitalName}  content={episodes} />
+            <ViewEhr title={hospitalName}  content={episodes} />
           ))}
         </div>
       </div>
