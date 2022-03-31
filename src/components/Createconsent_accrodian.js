@@ -13,67 +13,47 @@ const Createconsent_accrodian = (props) => {
   });
   const handleChange = (e) => {
     // Destructuring
-    const obj = {
-      eid : "",
-      encid :""
-    }
+   
     //obj.eid = e.target.value[0];
     //obj.encid = 
     const { value, checked } = e.target;
     const { languages } = userinfo;
+    let ar=value.split(",")
+    const obj = {
+      "encounterId": ar[0],
+      "episodeId": ar[1]
+    };
+    console.log("value" + value);
+    
     
     // Case 1 : The user checks the box
     if (checked) {
       setUserInfo({
-        languages: [...languages, value]
+        languages: [...languages, JSON.stringify(obj)]
       });
     }
   
     // Case 2  : The user unchecks the box
     else {
       setUserInfo({
-        languages: languages.filter((e) => e !== value)
+        languages: languages.filter((e) => e !== JSON.stringify(obj))
       });
     }
+
 
    
   };
 
    
-  const submitHandl =(e)=>{
-    userinfo.languages.map((item)=>{
-      console.log("Item " + item);
-      let ar=item.split(",")
-      
-      
-    
-      setepisodeids({
-        episodes: [{episodeId: ar[0],encounterId:ar[1]}, ...episodeids.episodes]
-        
-      });
-      
-     
-    })
-    console.log(episodeids.episodes)
-    
-  }
+  
   
   return (
     
     <div className="accordion-item">
       <div className="form-floating mt-3 mb-3 text-center">
               
-  <textarea
-    className="form-control text"
-    name="response"
-    value={userinfo.languages}
-    placeholder="The checkbox values will be displayed here "
-    id="floatingTextarea2"
-    style={{ height: "150px" }}
-   
-  
-  >  {console.log("hello " + userinfo.languages)}</textarea>
-  <button onClick={submitHandl}>submit</button>
+ {console.log("hello " + userinfo.languages)}
+  <button >Create consent</button>
 </div>
       <div className="accordion-title" onClick={() => setIsActive(!isActive)}>
         <div>{props.title}</div>
@@ -97,7 +77,7 @@ const Createconsent_accrodian = (props) => {
                     className="form-check-input"
                     type="checkbox"
                     name="languages"
-                    value={[episodeId,encounterId]}unction
+                    value={[episodeId,encounterId]}
                     id="flexCheckDefault"
                     onClick={handleChange}
                   />
