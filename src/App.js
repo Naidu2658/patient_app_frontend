@@ -1,17 +1,23 @@
 
 import React from 'react';
-import About from './components/About';
+import ViewEhr from './components/ViewEhr';
 
 import { BrowserRouter as Router, Routes, Route,Link } from "react-router-dom";
-import Getehr from './components/Getehr';
+import Checkboxc from './components/Checkboxc'
+import Createconsent from './components/Createconsent';
 function App() {
   return (
      <Router>
-     <Link to="/">home</Link>
-     <Link to="/about">About</Link>
+     <Link to="/">home</Link><br/>
+     <Link to="/viewehr">viewehr</Link><br/>
+     <Link to="/createconsnet">createconsnet</Link><br/>
+     <Link to="/checkbox">checkbox</Link>
     <Routes>
-      {/* <Route path="/" element={<Getehr />}> */}
-      <Route path="/about" element={<About />}>
+      <Route path="/viewehr" element={<ViewEhr />}>
+      </Route>
+      <Route path="/createconsnet" element={<Createconsent />}>
+      </Route>
+      <Route path="/checkbox" element={<Checkboxc />}>
       </Route>
     </Routes>
   </Router>

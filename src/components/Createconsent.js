@@ -1,34 +1,9 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 //import './hospitallist';
-import ViewEhr from './ViewEhr';
-export default function About(props) {
+import Createconsent_accrodian from './Createconsent_accrodian';
+export default function Createconsent(props) {
 
-
-    const accordionData = [
-        {
-          title: 'Section 1',
-          content: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis sapiente
-          laborum cupiditate possimus labore, hic temporibus velit dicta earum
-          suscipit commodi eum enim atque at? Et perspiciatis dolore iure
-          voluptatem.`
-        },
-        {
-          title: 'Section 2',
-          content: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia veniam
-          reprehenderit nam assumenda voluptatem ut. Ipsum eius dicta, officiis
-          quaerat iure quos dolorum accusantium ducimus in illum vero commodi
-          pariatur? Impedit autem esse nostrum quasi, fugiat a aut error cumque
-          quidem maiores doloremque est numquam praesentium eos voluptatem amet!
-          Repudiandae, mollitia id reprehenderit a ab odit!`
-        },
-        {
-          title: 'Section 3',
-          content: `Sapiente expedita hic obcaecati, laboriosam similique omnis architecto ducimus magnam accusantium corrupti
-          quam sint dolore pariatur perspiciatis, necessitatibus rem vel dignissimos
-          dolor ut sequi minus iste? Quas?`
-        }
-      ];
 
 
     const resp={
@@ -45,7 +20,7 @@ export default function About(props) {
                 "episodeName":45,
                 "encounters": [
                   {
-                    "encounterId": 88,
+                    "encounterId": 1,
                     "doctorName": "bharat",
                     "op_records": [
                       {
@@ -59,6 +34,22 @@ export default function About(props) {
                         "timestamp": "dfggdgd"
                       }
                     ]
+                  },
+                  {
+                    "encounterId": 2,
+                    "doctorName": "Rajat",
+                    "op_records": [
+                      {
+                        "op_record_id": 900,
+                        "diagnosis": "migrain",
+                        "record_details": {
+                            "complaints" : "headache",
+                            "prescription" : "dinchak",
+                            "followupplan" : "next visit after a week"
+                        },
+                        "timestamp": "dfggdgd"
+                      }
+                    ]
                   }
                 ]
                 
@@ -68,7 +59,7 @@ export default function About(props) {
                 "episodeName":45,
                 "encounters": [
                   {
-                    "encounterId": 88,
+                    "encounterId": 3,
                     "doctorName": "bharat1234",
                     "op_records": [
                       {
@@ -99,7 +90,7 @@ export default function About(props) {
                 "episodeName":45,
                 "encounters": [
                     {
-                        "encounterId": 88,
+                        "encounterId": 4,
                         "doctorName": "india",
                         "op_records": [
                           {
@@ -122,7 +113,7 @@ export default function About(props) {
                 "episodeName":45,
                 "encounters": [
                     {
-                        "encounterId": 88,
+                        "encounterId": 5,
                         "doctorName": "nitin",
                         "op_records": [
                           {
@@ -169,11 +160,11 @@ export default function About(props) {
     //listitems = []
     let val=0;
     return (  <div>
-        <h1>EHR Records</h1>
+        <h1>Create consent</h1>
         <div className="accordion">
           {resp.hospitalrecords.map(({hospitalName , dataCustodianId, episodes  }) => (
               
-            <ViewEhr title={hospitalName}  content={episodes} />
+            <Createconsent_accrodian title= {hospitalName}  content={episodes} />
           ))}
         </div>
       </div>
